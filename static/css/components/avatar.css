@@ -1,0 +1,43 @@
+.avatar {
+    display: inline-block;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    background-color: var(--color-border);
+    border: 1px solid var(--color-border);
+    transition: border-color var(--transition-fast);
+}
+
+.avatar:hover {
+    border-color: var(--color-border-hover);
+}
+
+/* Avatar sizes */
+.avatar-xs {
+    width: 24px;
+    height: 24px;
+}
+
+.avatar-sm {
+    width: 32px;
+    height: 32px;
+}
+
+.avatar-md {
+    width: 44px;
+    height: 44px;
+}
+
+.avatar-lg {
+    width: 64px;
+    height: 64px;
+}
+
+.avatar-xl {
+    width: 120px;
+    height: 120px;
+}
+
+.avatar-interactive {
+    cursor: pointer;
+}

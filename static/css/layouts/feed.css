@@ -1,0 +1,213 @@
+/* Main Layout Wrapper */
+.layout-container {
+    max-width: var(--width-container);
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-4);
+    display: flex;
+    gap: var(--space-8);
+    position: relative;
+    width: 100%;
+}
+
+.main-content {
+    flex: 1;
+    max-width: var(--width-feed);
+}
+
+.sidebar {
+    width: var(--width-sidebar);
+    position: sticky;
+    top: 92px; /* 60px nav + 32px spacing */
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border-glass);
+    z-index: 950;
+    box-shadow: var(--shadow-1);
+}
+
+.navbar-container {
+    max-width: var(--width-container);
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 800;
+    background: var(--color-brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+.navbar-search {
+    width: 280px;
+    position: relative;
+}
+
+.navbar-search input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-4) var(--space-2) var(--space-8);
+    font-size: var(--text-xs);
+    color: var(--color-text-primary);
+    transition: all var(--transition-fast);
+}
+
+.navbar-search input:focus {
+    outline: none;
+    border-color: var(--color-brand-primary);
+    background-color: var(--color-bg-base);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+}
+
+.navbar-search-icon {
+    position: absolute;
+    left: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+}
+
+.navbar-search-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+/* Notification badge */
+.nav-item-notifications {
+    position: relative;
+}
+
+.nav-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: var(--color-error);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    min-width: 16px;
+    height: 16px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    border: 2px solid var(--color-bg-base);
+}
+
+/* Suggested Users Sidebar Section */
+.suggested-section {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+}
+
+.suggested-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+}
+
+.suggested-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-text-secondary);
+}
+
+.suggested-link {
+    font-size: var(--text-xs);
+    color: var(--color-brand-primary);
+    font-weight: 600;
+}
+
+.suggested-link:hover {
+    text-decoration: underline;
+}
+
+/* Feed empty/caught-up states */
+.feed-message-card {
+    text-align: center;
+    padding: var(--space-12) var(--space-6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: rgba(255, 255, 255, 0.01);
+}
+
+.feed-message-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--color-text-muted);
+    margin: 0 auto var(--space-4);
+}
+
+.feed-message-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+}
+
+.feed-message-text {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+.feed-message-link {
+    color: var(--color-brand-primary);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+/* Responsive collapse */
+@media (max-width: 960px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .layout-container {
+        justify-content: center;
+    }
+    
+    .main-content {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-search {
+        display: none; /* Hide search bar on small screens to fit menus */
+    }
+}

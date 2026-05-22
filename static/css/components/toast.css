@@ -1,0 +1,95 @@
+.toast-container {
+    position: fixed;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    z-index: 2000;
+    max-width: 400px;
+    width: 90%;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-3);
+    color: var(--color-text-primary);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast-success {
+    border-left: 4px solid var(--color-success);
+}
+
+.toast-error {
+    border-left: 4px solid var(--color-error);
+}
+
+.toast-warning {
+    border-left: 4px solid var(--color-warning);
+}
+
+.toast-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.toast-success .toast-icon { color: var(--color-success); }
+.toast-error .toast-icon { color: var(--color-error); }
+.toast-warning .toast-icon { color: var(--color-warning); }
+
+.toast-message {
+    font-size: var(--text-sm);
+    font-weight: 500;
+}
+
+/* Dismissible top banner for email verification */
+.banner {
+    background-color: rgba(99, 102, 241, 0.15);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.3);
+    padding: var(--space-3) var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--text-sm);
+    color: var(--color-text-primary);
+    gap: var(--space-4);
+    z-index: 900;
+    position: sticky;
+    top: 60px; /* Right under the navbar */
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.banner-link {
+    color: var(--color-brand-primary);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.banner-close {
+    cursor: pointer;
+    color: var(--color-text-secondary);
+}
+
+.banner-close:hover {
+    color: var(--color-text-primary);
+}

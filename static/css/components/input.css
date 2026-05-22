@@ -1,0 +1,176 @@
+.form-group {
+    margin-bottom: var(--space-4);
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.input-field {
+    width: 100%;
+    background-color: var(--color-bg-base);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    font-size: var(--text-sm);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--color-brand-primary);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.input-field::placeholder {
+    color: var(--color-text-muted);
+}
+
+.input-field:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Password Strength Indicator */
+.password-strength-container {
+    margin-top: var(--space-2);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.password-strength-bars {
+    display: flex;
+    gap: var(--space-1);
+    height: 4px;
+}
+
+.password-strength-bar {
+    flex: 1;
+    background-color: var(--color-border);
+    border-radius: var(--radius-full);
+    transition: background-color var(--transition-fast);
+}
+
+.password-strength-bar.weak { background-color: var(--color-error); }
+.password-strength-bar.medium { background-color: var(--color-warning); }
+.password-strength-bar.strong { background-color: var(--color-success); }
+
+.password-strength-text {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+}
+
+/* Character Counter */
+.char-counter-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.char-counter-container.limit-reached {
+    color: var(--color-error);
+}
+
+/* Autocomplete Suggestion Dropdown */
+.autocomplete-dropdown {
+    position: absolute;
+    bottom: 100%; /* Position above comment inputs, or absolute below/above */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-3);
+    z-index: 1050;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.autocomplete-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.autocomplete-item:hover, .autocomplete-item.active {
+    background-color: var(--color-border);
+}
+
+/* Drag and Drop File Upload Area */
+.dropzone {
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: rgba(255, 255, 255, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-12) var(--space-6);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-align: center;
+    gap: var(--space-4);
+}
+
+.dropzone:hover, .dropzone.dragover {
+    border-color: var(--color-brand-primary);
+    background-color: rgba(99, 102, 241, 0.05);
+}
+
+.dropzone-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--color-text-secondary);
+}
+
+.dropzone-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 600;
+}
+
+.dropzone-text {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.image-preview-container {
+    width: 100%;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.image-preview-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-preview-remove {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
